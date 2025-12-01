@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doc PDF Downloader</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+      }
+      label {
+        display: block;
+        margin-top: 12px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 6px;
+      }
+      button {
+        margin-top: 16px;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      .row {
+        margin-top: 20px;
+      }
+      #status {
+        margin-top: 10px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Documentation PDF Downloader</h1>
+
+    <div>
+      <label>
+        Start URL:
+        <input
+          id="start_url"
+          type="text"
+          value="https://vuejs.org/guide/introduction.html"
+        />
+      </label>
+
+      <label>
+        Base URL:
+        <input id="base_url" type="text" value="https://vuejs.org" />
+      </label>
+
+      <label>
+        Next Selector (CSS):
+        <input id="next_selector" type="text" value="a.next-link" />
+      </label>
+
+      <label>
+        Output Filename:
+        <input id="output_filename" type="text" value="VueDocsDark.pdf" />
+      </label>
+
+      <label>
+        <input id="dark_mode" type="checkbox" checked />
+        Dark Mode
+      </label>
+
+      <div class="row">
+        <button id="generate_btn">Generate</button>
+        <button id="download_btn" disabled>Download</button>
+      </div>
+
+      <div id="status"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
